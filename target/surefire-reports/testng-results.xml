@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-25T16:14:08 IST" name="Surefire suite" finished-at="2024-10-25T16:14:58 IST" duration-ms="50383">
+    <groups>
+    </groups>
+    <test started-at="2024-10-25T16:14:08 IST" name="Surefire test" finished-at="2024-10-25T16:14:58 IST" duration-ms="50383">
+      <class name="com.tests.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.tests.LoginTest@57a3af25]" started-at="2024-10-25T16:14:09 IST" name="setUp" finished-at="2024-10-25T16:14:15 IST" duration-ms="6582" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="LoginLogout(java.lang.String,java.lang.String)[pri:0, instance:com.tests.LoginTest@57a3af25]" started-at="2024-10-25T16:14:15 IST" name="LoginLogout" data-provider="loginData" finished-at="2024-10-25T16:14:58 IST" duration-ms="42621" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[udupaakshaya+QATest@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ New@1234]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginLogout -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.tests.LoginTest@57a3af25]" started-at="2024-10-25T16:14:58 IST" name="tearDown" finished-at="2024-10-25T16:14:58 IST" duration-ms="417" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LoginLogout status=SUCCESS method=LoginTest.LoginLogout(java.lang.String,java.lang.String)[pri:0, instance:com.tests.LoginTest@57a3af25] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.tests.LoginTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
