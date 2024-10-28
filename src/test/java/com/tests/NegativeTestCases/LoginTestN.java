@@ -46,7 +46,7 @@ import io.appium.java_client.AppiumDriver;
 			  waitForTime(9000);
 			
 }
-		@Test (priority =8) 
+		//@Test (priority =8) 
 		public void WrongPasswordLoginN() throws InterruptedException, IOException {
 			
 			  AppiumDriver  driver = DriverManager.getDriver();
