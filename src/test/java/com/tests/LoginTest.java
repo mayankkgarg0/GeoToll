@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
@@ -47,11 +48,12 @@ public final class LoginTest extends BaseTest implements ITestListener {
 
 		AppiumDriver driver = DriverManager.getDriver();
 		waitForTime(2000);
-
+		String TestCaseFinalStatus = "Pass";
 		test.info("Step 1: Open the login page");
 		test.info("Step 2: Enable Bluetooth and connect ");
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		InternetUP();
 		try {
 
 			Runtime.getRuntime().exec("adb shell am broadcast -a io.appium.settings.bluetooth --es setstatus enable");
@@ -83,38 +85,57 @@ public final class LoginTest extends BaseTest implements ITestListener {
 			driver.findElement(AppiumBy.xpath(
 					"//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/btn_login\"]"))
 					.click();
-			longPress(driver.findElement(AppiumBy.xpath(
-					"//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/btn_login\"]")));
+		//	longPress(driver.findElement(AppiumBy.xpath(
+				//	"//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/btn_login\"]")));
 			waitForTime(15000);
-			driver.findElement(AppiumBy.xpath(
-					"//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/img_close\"]"))
-					.click();
-			waitForTime(6000);
+			//NativeswipeUp(); 
+			scroll("UP", 0.5);
+		/*	try {
+				driver.findElement(AppiumBy.xpath(
+						"//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/img_close\"]"))
+						.click();
+				waitForTime(6000);
 
-			test.pass("Login Test Passed");
-			test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "LoginPASS"));
+				test.pass("Login Test Passed");
+				test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "Loginpass"));
+			} catch (Exception e) {
+
+				test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "LoginPASS"));
+				test.info(e);
+				test.pass("Login Test Failed");
+				//Assert.fail(e.getMessage());
+
+			} */
 
 		} catch (Exception e) {
-			test.fail(e);
-
+			test.info(e);
+			test.fail("Login Test Failed" + e);
 			// e.printStackTrace();
-			test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "LoginFail"));
+			test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "LoginDataFail"));
+
 			Assert.fail("Test failed due to exception: " + e.getMessage());
+
 		}
 
 		try {
-
+			
+			waitForTime(3000);
 			String ExpectedTittle = "Welcome, Akshay QATest ";
 			String ActualTittle = driver.findElement(By.id("com.geotoll.egpsflex_android.dev.uat:id/txt_welcome_label"))
 					.getText();
 			System.out.println(ActualTittle);
 			Assert.assertEquals(ActualTittle, ExpectedTittle, "ActualTittle is passed");
+			test.pass("Login Test Passed");
+			test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "Loginpass"));
 
 		} catch (Exception e) {
-			// e.printStackTrace();
-			test.fail(e);
+			test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "LoginPASS"));
+			test.info(e);
+			test.pass("Login Test Failed");
+			Assert.fail(e.getMessage());
+		/*	test.fail("Login Test Failed" + e);
 			test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "Assertion Failed"));
-			Assert.fail("Test failed due to exception: " + e.getMessage());
+			Assert.fail("Test failed due to exception: " + e.getMessage()); */
 		}
 //--------------------------------------------------------------------------------------Login Done --------------------------------------------------------------------------------------------------//
 
@@ -167,4 +188,98 @@ public final class LoginTest extends BaseTest implements ITestListener {
 			e.printStackTrace();
 		}
 	}
+	
+	public void InternetUP() {
+		try {
+
+			Runtime.getRuntime().exec("adb shell svc wifi enable");
+			Runtime.getRuntime().exec("adb shell svc data enable");
+			test.info("Data/WiFi Enabled");
+			waitForTime(1000);
+			System.out.println("Mobile Data & WiFI has been Enabled");
+		} catch (Exception e) {
+			e.printStackTrace();
+			test.info(e);
+		}
+	}
+	
+	public void NativeswipeUp() {
+		try {
+
+			Runtime.getRuntime().exec("adb shell input swipe 500 1000 500 0");
+			waitForTime(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+	
+	public void NativeswipeDown() {
+		try {
+
+			Runtime.getRuntime().exec("adb shell input swipe 500 0 500 1000");
+			waitForTime(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
+	
+	public static void swipe(Point start, Point end, Duration duration) {
+		AppiumDriver driver = DriverManager.getDriver();
+        PointerInput input = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+        Sequence swipe = new Sequence(input, 0);
+        swipe.addAction(input.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), start.x, start.y));
+        swipe.addAction(input.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        swipe.addAction(input.createPointerMove(duration, PointerInput.Origin.viewport(), end.x, end.y));
+        swipe.addAction(input.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        driver.perform(ImmutableList.of(swipe));
+    }
+	
+	  public static void scroll(String pageDirection, double scrollRatio){
+		AppiumDriver driver = DriverManager.getDriver();
+		Duration SCROLL_DUR = Duration.ofMillis(300);
+        if (scrollRatio < 0 || scrollRatio > 1) {
+            throw new Error("Scroll distance must be between 0 and 1");
+        }
+        
+        Dimension size = driver.manage().window().getSize();
+        System.out.println("Screen Size = "+size);
+        System.out.println("");
+
+        Point midPoint = new Point((int)(size.width * 0.5),(int)(size.height * 0.5));
+        
+        int a = (int)(midPoint.x * scrollRatio);
+        int b = (int)(midPoint.y * scrollRatio);
+        
+        int bottom = midPoint.y + (int)(midPoint.y * scrollRatio); // 50 + 25        B
+        int top = midPoint.y - (int)(midPoint.y * scrollRatio); // 50 - 25           A
+        int left = midPoint.x - (int)(midPoint.x * scrollRatio); // 25 - 12.5         M
+        int right = midPoint.x + (int)(midPoint.x * scrollRatio); // 25 + 12.5        N
+
+        System.out.println("Midpoint: "+ midPoint);
+        
+        System.out.println("Midpoint x: "+ midPoint.x);   
+        System.out.println("a: "+ a);  
+        
+        System.out.println("Midpoint y: "+ midPoint.y);
+        System.out.println("b: "+ b);        
+
+        System.out.println("");
+        System.out.println("Bottom: "+ bottom);
+        System.out.println("Top: "+ top);
+        System.out.println("Right: "+ right);
+        System.out.println("Left: "+ left);
+        System.out.println("--------------------");
+        
+        if (pageDirection == "UP") {
+        	//Swipe Top to bottom, Page will go UP
+            swipe(new Point(midPoint.x, top), new Point(midPoint.x, bottom), SCROLL_DUR);
+        } else if (pageDirection == "DOWN") {
+            swipe(new Point(midPoint.x, bottom), new Point(midPoint.x, top), SCROLL_DUR);
+        } else if (pageDirection == "LEFT") {
+            swipe(new Point(left, midPoint.y), new Point(right, midPoint.y), SCROLL_DUR);
+        } else {
+        	//RIGHT
+            swipe(new Point(right, midPoint.y), new Point(left, midPoint.y), SCROLL_DUR);
+        }
+    }
 }

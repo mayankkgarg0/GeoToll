@@ -2,14 +2,16 @@ package base;
 
 import com.automate.driver.Drivers;
 import com.automate.driver.factory.DriverFactory;
-import com.automate.driver.manager.DeviceManager;
+
 import com.automate.driver.manager.DriverManager;
-import com.automate.driver.manager.PlatformManager;
-import com.automate.enums.MobilePlatformName;
+
+
 
 
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 
 //import com.automate.utils.screenrecording.ScreenRecordingService;
 import org.testng.ITestResult;
@@ -28,6 +30,20 @@ public class BaseTest extends Drivers {
   public BaseTest() {
   }
 
+  
+  public AppiumDriverLocalService appiumService;
+  public AppiumDriver driver;
+
+  @BeforeSuite
+  public void startAppiumServer() {
+      // Start the Appium server
+      appiumService = AppiumDriverLocalService.buildDefaultService();
+      appiumService.start();
+      System.out.println("Appium server started at: " + appiumService.getUrl());
+  }
+
+  
+  
   @BeforeMethod
   public void setUp() throws MalformedURLException, InterruptedException {
  
@@ -42,5 +58,15 @@ public class BaseTest extends Drivers {
   DriverFactory.quitDriver();
 
   }
+  
+  
+  
+  @AfterSuite
+  public void stopAppiumServer() {
+      
+          appiumService.stop(); // Stop the Appium server
+          System.out.println("Appium server stopped.");
+   }
+  
 
 } 

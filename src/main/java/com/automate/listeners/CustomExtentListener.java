@@ -1,6 +1,6 @@
 package com.automate.listeners;
 
-import com.automate.customannotations.FrameworkAnnotation;
+
 import com.automate.driver.manager.DriverManager;
 import com.automate.reports.ExtentManager;
 import com.automate.utils.screenshot.ScreenshotUtils;

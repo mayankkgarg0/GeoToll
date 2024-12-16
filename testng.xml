@@ -6,10 +6,27 @@
     </listeners>
   <test  name="Test">
     <classes>
- 
-  <class name="com.tests.LoginTest"/>
-  
-  
+         <class name="UpdatedTestCases.ModifiedNegDisWifiCombinedHamburgerMenuOptions"/>
+         <class name="UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO"/>    
+   <!--   
+      
+          <class name="com.tests.NegativeTestCases.NegDisWifiCombinedMRO"/>
+         <class name="com.tests.LoginTest"/>     
+         <class name="com.tests.NegativeTestCases.NegPosDisWifiCombinedHamburgerMenuOptions"/> 
+        
+         <class name="com.tests.NegativeTestCases.NegDisWifiCombinedHamburgerMenuOptions"/>
+        <class name="com.tests.NegativeTestCases.NegDisWifiChangePassword"/>
+        <class name="com.tests.NegativeTestCases.NegDisWifiReportTechIssue"/>
+        <class name="com.tests.NegativeTestCases.NegDisWifiPrivacyPolicy"/>
+        <class name="com.tests.NegativeTestCases.NegDisWifiMobConnectBluetooth"/>
+        <class name="com.tests.NegativeTestCases.NegDisWifiMobOdometerTab"/>
+        <class name="com.tests.NegativeTestCases.NegDisWifiMobVinTab"/>
+        <class name="com.tests.NegativeTestCases.NegDisWifiTermsnCondition"/>
+       
+        <class name="com.tests.HamburgerFunc"/>
+        <class name="com.tests.MRO"/>
+        <class name="com.tests.NegativeTestCases.MROIndivisualTabCheckN"/>
+        <class name="com.tests.NegativeTestCases.MROSplitN"/>  -->
      </classes>  
    
   </test> <!-- Test -->

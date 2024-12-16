@@ -1,67 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-25T09:44:47 IST" name="Suite" finished-at="2024-10-25T09:45:22 IST" duration-ms="34960">
+  <suite started-at="2024-12-12T17:11:14 IST" name="Suite" finished-at="2024-12-12T17:11:15 IST" duration-ms="1330">
     <groups>
     </groups>
-    <test started-at="2024-10-25T09:44:47 IST" name="Test" finished-at="2024-10-25T09:45:22 IST" duration-ms="34960">
-      <class name="com.tests.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.tests.LoginTest@2118cddf]" started-at="2024-10-25T09:44:48 IST" name="setUp" finished-at="2024-10-25T09:44:54 IST" duration-ms="6205" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="LoginLogout(java.lang.String,java.lang.String)[pri:0, instance:com.tests.LoginTest@2118cddf]" started-at="2024-10-25T09:44:54 IST" name="LoginLogout" data-provider="loginData" finished-at="2024-10-25T09:45:21 IST" duration-ms="27235" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[udupaakshaya+QATest@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ New@1234]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
+    <test started-at="2024-12-12T17:11:14 IST" name="Test" finished-at="2024-12-12T17:11:15 IST" duration-ms="1330">
+      <class name="UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO">
+        <test-method is-config="true" signature="startAppiumServer()[pri:0, instance:UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO@452e19ca]" started-at="2024-12-12T17:10:53 IST" name="startAppiumServer" finished-at="2024-12-12T17:11:14 IST" duration-ms="20849" status="FAIL">
+          <exception class="io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException">
             <message>
-              <![CDATA[Test failed due to exception: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [72e8598d-7bc9-4d26-9614-b332caf02f44, findElement {using=xpath, value=//android.widget.Button[@resource-id="com.geotoll.egpsflex_android.dev.uat:id/img_close"]}]
-Capabilities {appium:appActivity: com.geotoll.egpsflex_androi..., appium:appPackage: com.geotoll.egpsflex_androi..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.geotoll.egpsflex_androi..., appPackage: com.geotoll.egpsflex_androi..., autoGrantPermissions: true, automationName: UiAutomator2, deviceName: ZD222JNNVH, platformName: ANDROID, platformVersion: 14.0}, appium:deviceApiLevel: 34, appium:deviceManufacturer: motorola, appium:deviceModel: moto g54 5G, appium:deviceName: ZD222JNNVH, appium:deviceScreenDensity: 400, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: ZD222JNNVH, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.5, appium:platformVersion: 14, appium:statBarHeight: 117, appium:takesScreenshot: true, appium:viewportRect: {height: 2283, left: 0, top: 117, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 72e8598d-7bc9-4d26-9614-b332caf02f44]]>
+              <![CDATA[[The local appium server has not been started, Reason: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms, Consider increasing the server startup timeout value (currently 20000ms), Node.js executable path: C:\Program Files\nodejs\node.exe, Arguments: [C:\Users\dell\AppData\Roaming\npm\node_modules\appium\build\lib\main.js, --port, 4723, --address, 0.0.0.0], Output: [35m[Appium][39m Welcome to Appium v2.6.0
+[35m[Appium][39m The autodetected Appium home path: C:\Users\dell\.appium
+[35m[Appium][39m Attempting to load driver uiautomator2...
+[35m[Appium][39m Requiring driver at C:\Users\dell\.appium\node_modules\appium-uiautomator2-driver\build\index.js
+[35m[Appium][39m AndroidUiautomator2Driver has been successfully loaded in 1.524s
+[38;5;0m[HTTP][0m Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
+[35m[Appium][39m Could not configure Appium server. It's possible that a driver or plugin tried to update the server and failed. Original error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m Error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m     at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+[35m[Appium][39m     at listenInCluster (node:net:1946:12)
+[35m[Appium][39m     at doListen (node:net:2116:7)
+[35m[Appium][39m     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Test failed due to exception: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [72e8598d-7bc9-4d26-9614-b332caf02f44, findElement {using=xpath, value=//android.widget.Button[@resource-id="com.geotoll.egpsflex_android.dev.uat:id/img_close"]}]
-Capabilities {appium:appActivity: com.geotoll.egpsflex_androi..., appium:appPackage: com.geotoll.egpsflex_androi..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.geotoll.egpsflex_androi..., appPackage: com.geotoll.egpsflex_androi..., autoGrantPermissions: true, automationName: UiAutomator2, deviceName: ZD222JNNVH, platformName: ANDROID, platformVersion: 14.0}, appium:deviceApiLevel: 34, appium:deviceManufacturer: motorola, appium:deviceModel: moto g54 5G, appium:deviceName: ZD222JNNVH, appium:deviceScreenDensity: 400, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: ZD222JNNVH, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.5, appium:platformVersion: 14, appium:statBarHeight: 117, appium:takesScreenshot: true, appium:viewportRect: {height: 2283, left: 0, top: 117, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 72e8598d-7bc9-4d26-9614-b332caf02f44
-at org.testng.Assert.fail(Assert.java:111)
-at com.tests.LoginTest.LoginLogout(LoginTest.java:102)
+              <![CDATA[io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException: [The local appium server has not been started, Reason: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms, Consider increasing the server startup timeout value (currently 20000ms), Node.js executable path: C:\Program Files\nodejs\node.exe, Arguments: [C:\Users\dell\AppData\Roaming\npm\node_modules\appium\build\lib\main.js, --port, 4723, --address, 0.0.0.0], Output: [35m[Appium][39m Welcome to Appium v2.6.0
+[35m[Appium][39m The autodetected Appium home path: C:\Users\dell\.appium
+[35m[Appium][39m Attempting to load driver uiautomator2...
+[35m[Appium][39m Requiring driver at C:\Users\dell\.appium\node_modules\appium-uiautomator2-driver\build\index.js
+[35m[Appium][39m AndroidUiautomator2Driver has been successfully loaded in 1.524s
+[38;5;0m[HTTP][0m Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
+[35m[Appium][39m Could not configure Appium server. It's possible that a driver or plugin tried to update the server and failed. Original error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m Error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m     at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+[35m[Appium][39m     at listenInCluster (node:net:1946:12)
+[35m[Appium][39m     at doListen (node:net:2116:7)
+[35m[Appium][39m     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+]
+at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:203)
+at base.BaseTest.startAppiumServer(BaseTest.java:41)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:358)
 at org.testng.SuiteRunner.run(SuiteRunner.java:312)
 at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -72,24 +57,111 @@ at org.testng.TestNG.run(TestNG.java:1079)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms
+at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:94)
+at io.appium.java_client.service.local.AppiumDriverLocalService.ping(AppiumDriverLocalService.java:157)
+at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:182)
+... 18 more
+Caused by: java.util.concurrent.TimeoutException
+at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:91)
+... 20 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginLogout -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.tests.LoginTest@2118cddf]" started-at="2024-10-25T09:45:22 IST" name="tearDown" finished-at="2024-10-25T09:45:22 IST" duration-ms="343" status="PASS">
+        </test-method> <!-- startAppiumServer -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO@452e19ca]" started-at="2024-12-12T17:11:15 IST" name="setUp" finished-at="2024-12-12T17:11:15 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="ModifiedOneNegDisWifiCombinedMROMethod(java.lang.String,java.lang.String)[pri:0, instance:UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO@452e19ca]" started-at="2024-12-12T17:11:15 IST" name="ModifiedOneNegDisWifiCombinedMROMethod" data-provider="MROData" finished-at="2024-12-12T17:11:15 IST" duration-ms="0" status="SKIP">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=LoginLogout status=FAILURE method=LoginTest.LoginLogout(java.lang.String,java.lang.String)[pri:0, instance:com.tests.LoginTest@2118cddf] output={null}]]]>
+                <![CDATA[mayankkgarg0+stage.pilot@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ New@12345]]>
               </value>
             </param>
           </params>
+          <exception class="io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException">
+            <message>
+              <![CDATA[[The local appium server has not been started, Reason: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms, Consider increasing the server startup timeout value (currently 20000ms), Node.js executable path: C:\Program Files\nodejs\node.exe, Arguments: [C:\Users\dell\AppData\Roaming\npm\node_modules\appium\build\lib\main.js, --port, 4723, --address, 0.0.0.0], Output: [35m[Appium][39m Welcome to Appium v2.6.0
+[35m[Appium][39m The autodetected Appium home path: C:\Users\dell\.appium
+[35m[Appium][39m Attempting to load driver uiautomator2...
+[35m[Appium][39m Requiring driver at C:\Users\dell\.appium\node_modules\appium-uiautomator2-driver\build\index.js
+[35m[Appium][39m AndroidUiautomator2Driver has been successfully loaded in 1.524s
+[38;5;0m[HTTP][0m Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
+[35m[Appium][39m Could not configure Appium server. It's possible that a driver or plugin tried to update the server and failed. Original error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m Error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m     at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+[35m[Appium][39m     at listenInCluster (node:net:1946:12)
+[35m[Appium][39m     at doListen (node:net:2116:7)
+[35m[Appium][39m     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException: [The local appium server has not been started, Reason: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms, Consider increasing the server startup timeout value (currently 20000ms), Node.js executable path: C:\Program Files\nodejs\node.exe, Arguments: [C:\Users\dell\AppData\Roaming\npm\node_modules\appium\build\lib\main.js, --port, 4723, --address, 0.0.0.0], Output: [35m[Appium][39m Welcome to Appium v2.6.0
+[35m[Appium][39m The autodetected Appium home path: C:\Users\dell\.appium
+[35m[Appium][39m Attempting to load driver uiautomator2...
+[35m[Appium][39m Requiring driver at C:\Users\dell\.appium\node_modules\appium-uiautomator2-driver\build\index.js
+[35m[Appium][39m AndroidUiautomator2Driver has been successfully loaded in 1.524s
+[38;5;0m[HTTP][0m Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
+[35m[Appium][39m Could not configure Appium server. It's possible that a driver or plugin tried to update the server and failed. Original error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m Error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m     at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+[35m[Appium][39m     at listenInCluster (node:net:1946:12)
+[35m[Appium][39m     at doListen (node:net:2116:7)
+[35m[Appium][39m     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+]
+at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:203)
+at base.BaseTest.startAppiumServer(BaseTest.java:41)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:358)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms
+at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:94)
+at io.appium.java_client.service.local.AppiumDriverLocalService.ping(AppiumDriverLocalService.java:157)
+at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:182)
+... 18 more
+Caused by: java.util.concurrent.TimeoutException
+at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:91)
+... 20 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ModifiedOneNegDisWifiCombinedMROMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO@452e19ca]" started-at="2024-12-12T17:11:15 IST" name="tearDown" finished-at="2024-12-12T17:11:15 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.tests.LoginTest -->
+        <test-method is-config="true" signature="stopAppiumServer()[pri:0, instance:UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO@452e19ca]" started-at="2024-12-12T17:11:16 IST" name="stopAppiumServer" finished-at="2024-12-12T17:11:16 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopAppiumServer -->
+      </class> <!-- UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\dell\eclipse-workspace\GeoTollUAT\testng.xml</span>
+                    <span>C:\Users\dell\eclipse-workspace\GeoTollUAT2\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.tests.LoginTest" class="method navigator-link" hash-for-method="LoginLogout(udupaakshaya+QATest@gmail.com,  New@1234)">LoginLogout(udupaakshaya+QATest@gmail.com,  New@1234)</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO" class="method navigator-link" hash-for-method="ModifiedOneNegDisWifiCombinedMROMethod(mayankkgarg0+stage.pilot@gmail.com,  New@12345)">ModifiedOneNegDisWifiCombinedMROMethod(mayankkgarg0+stage.pilot@gmail.com,  New@12345)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,38 +118,52 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.tests.LoginTest</span>
+              <img src="skipped.png"/>
+              <span class="class-name">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginLogout(udupaakshaya+QATest@gmail.com,  New@1234)">
-                  </a> <!-- LoginLogout(udupaakshaya+QATest@gmail.com,  New@1234) -->
-                  <span class="method-name">LoginLogout</span>
-                  <span class="parameters">(udupaakshaya+QATest@gmail.com, New@1234)</span>
-                  <div class="stack-trace">java.lang.AssertionError: Test failed due to exception: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [72e8598d-7bc9-4d26-9614-b332caf02f44, findElement {using=xpath, value=//android.widget.Button[@resource-id=&quot;com.geotoll.egpsflex_android.dev.uat:id/img_close&quot;]}]
-Capabilities {appium:appActivity: com.geotoll.egpsflex_androi..., appium:appPackage: com.geotoll.egpsflex_androi..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.geotoll.egpsflex_androi..., appPackage: com.geotoll.egpsflex_androi..., autoGrantPermissions: true, automationName: UiAutomator2, deviceName: ZD222JNNVH, platformName: ANDROID, platformVersion: 14.0}, appium:deviceApiLevel: 34, appium:deviceManufacturer: motorola, appium:deviceModel: moto g54 5G, appium:deviceName: ZD222JNNVH, appium:deviceScreenDensity: 400, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: ZD222JNNVH, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.5, appium:platformVersion: 14, appium:statBarHeight: 117, appium:takesScreenshot: true, appium:viewportRect: {height: 2283, left: 0, top: 117, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 72e8598d-7bc9-4d26-9614-b332caf02f44
-	at com.tests.LoginTest.LoginLogout(LoginTest.java:102)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 26 stack frames
+                  <a name="ModifiedOneNegDisWifiCombinedMROMethod(mayankkgarg0+stage.pilot@gmail.com,  New@12345)">
+                  </a> <!-- ModifiedOneNegDisWifiCombinedMROMethod(mayankkgarg0+stage.pilot@gmail.com,  New@12345) -->
+                  <span class="method-name">ModifiedOneNegDisWifiCombinedMROMethod</span>
+                  <span class="parameters">(mayankkgarg0+stage.pilot@gmail.com, New@12345)</span>
+                  <div class="stack-trace">io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException: [The local appium server has not been started, Reason: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms, Consider increasing the server startup timeout value (currently 20000ms), Node.js executable path: C:\Program Files\nodejs\node.exe, Arguments: [C:\Users\dell\AppData\Roaming\npm\node_modules\appium\build\lib\main.js, --port, 4723, --address, 0.0.0.0], Output: [35m[Appium][39m Welcome to Appium v2.6.0
+[35m[Appium][39m The autodetected Appium home path: C:\Users\dell\.appium
+[35m[Appium][39m Attempting to load driver uiautomator2...
+[35m[Appium][39m Requiring driver at C:\Users\dell\.appium\node_modules\appium-uiautomator2-driver\build\index.js
+[35m[Appium][39m AndroidUiautomator2Driver has been successfully loaded in 1.524s
+[38;5;0m[HTTP][0m Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
+[35m[Appium][39m Could not configure Appium server. It&apos;s possible that a driver or plugin tried to update the server and failed. Original error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m Error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m     at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+[35m[Appium][39m     at listenInCluster (node:net:1946:12)
+[35m[Appium][39m     at doListen (node:net:2116:7)
+[35m[Appium][39m     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+]
+	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:203)
+	at base.BaseTest.startAppiumServer(BaseTest.java:41)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:94)
+	at io.appium.java_client.service.local.AppiumDriverLocalService.ping(AppiumDriverLocalService.java:157)
+	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:182)
+	... 18 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:91)
+	... 20 more
+... Removed 17 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-skipped -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\dell\eclipse-workspace\GeoTollUAT\testng.xml</span>
+            <span class="header-content">C:\Users\dell\eclipse-workspace\GeoTollUAT2\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -161,7 +175,7 @@ Session ID: 72e8598d-7bc9-4d26-9614-b332caf02f44
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.tests.LoginTest&quot;/&gt;
+      &lt;class name=&quot;UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -203,14 +217,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'LoginLogout')
-data.setCell(0, 2, 'com.tests.LoginTest')
-data.setCell(0, 3, 27235);
+data.setCell(0, 1, 'ModifiedOneNegDisWifiCombinedMROMethod')
+data.setCell(0, 2, 'UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO')
+data.setCell(0, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 27 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -236,21 +250,13 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.tests.LoginTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
+              <div class="chronological-class-name">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">LoginLogout(udupaakshaya+QATest@gmail.com,  New@1234)</span>
-                <span class="method-start">6206 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=LoginLogout status=FAILURE method=LoginTest.LoginLogout(java.lang.String,java.lang....)</span>
-                <span class="method-start">33914 ms</span>
-              </div> <!-- configuration-method after -->
+                <span class="method-name">startAppiumServer</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

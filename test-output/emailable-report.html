@@ -9,20 +9,62 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">34,960</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">1,330</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.tests.LoginTest</td><td><a href="#m0">LoginLogout</a></td><td rowspan="1">1729829694625</td><td rowspan="1">27235</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO</td><td><a href="#m0">startAppiumServer</a></td><td rowspan="1">1734003653563</td><td rowspan="1">20849</td></tr><tr><th colspan="4">Test &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="3">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO</td><td><a href="#m1">setUp</a></td><td rowspan="1">1734003675556</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m2">stopAppiumServer</a></td><td rowspan="1">1734003676208</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m3">tearDown</a></td><td rowspan="1">1734003675767</td><td rowspan="1">0</td></tr><tr><th colspan="4">Test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO</td><td><a href="#m4">ModifiedOneNegDisWifiCombinedMROMethod</a></td><td rowspan="1">1734003675560</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com.tests.LoginTest#LoginLogout</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>udupaakshaya+QATest@gmail.com</td><td> New@1234</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: Test failed due to exception: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.3&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [72e8598d-7bc9-4d26-9614-b332caf02f44, findElement {using=xpath, value=//android.widget.Button[@resource-id=&quot;com.geotoll.egpsflex_android.dev.uat:id/img_close&quot;]}]
-Capabilities {appium:appActivity: com.geotoll.egpsflex_androi..., appium:appPackage: com.geotoll.egpsflex_androi..., appium:autoGrantPermissions: true, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.geotoll.egpsflex_androi..., appPackage: com.geotoll.egpsflex_androi..., autoGrantPermissions: true, automationName: UiAutomator2, deviceName: ZD222JNNVH, platformName: ANDROID, platformVersion: 14.0}, appium:deviceApiLevel: 34, appium:deviceManufacturer: motorola, appium:deviceModel: moto g54 5G, appium:deviceName: ZD222JNNVH, appium:deviceScreenDensity: 400, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: ZD222JNNVH, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.5, appium:platformVersion: 14, appium:statBarHeight: 117, appium:takesScreenshot: true, appium:viewportRect: {height: 2283, left: 0, top: 117, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 72e8598d-7bc9-4d26-9614-b332caf02f44
-	at com.tests.LoginTest.LoginLogout(LoginTest.java:102)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 26 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO#startAppiumServer</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException: [The local appium server has not been started, Reason: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms, Consider increasing the server startup timeout value (currently 20000ms), Node.js executable path: C:\Program Files\nodejs\node.exe, Arguments: [C:\Users\dell\AppData\Roaming\npm\node_modules\appium\build\lib\main.js, --port, 4723, --address, 0.0.0.0], Output: [35m[Appium][39m Welcome to Appium v2.6.0
+[35m[Appium][39m The autodetected Appium home path: C:\Users\dell\.appium
+[35m[Appium][39m Attempting to load driver uiautomator2...
+[35m[Appium][39m Requiring driver at C:\Users\dell\.appium\node_modules\appium-uiautomator2-driver\build\index.js
+[35m[Appium][39m AndroidUiautomator2Driver has been successfully loaded in 1.524s
+[38;5;0m[HTTP][0m Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
+[35m[Appium][39m Could not configure Appium server. It&apos;s possible that a driver or plugin tried to update the server and failed. Original error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m Error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m     at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+[35m[Appium][39m     at listenInCluster (node:net:1946:12)
+[35m[Appium][39m     at doListen (node:net:2116:7)
+[35m[Appium][39m     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+]
+	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:203)
+	at base.BaseTest.startAppiumServer(BaseTest.java:41)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:94)
+	at io.appium.java_client.service.local.AppiumDriverLocalService.ping(AppiumDriverLocalService.java:157)
+	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:182)
+	... 18 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:91)
+	... 20 more
+... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO#setUp</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO#stopAppiumServer</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO#tearDown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">UpdatedTestCases.ModifiedOneNegDisWifiCombinedMRO#ModifiedOneNegDisWifiCombinedMROMethod</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>mayankkgarg0+stage.pilot@gmail.com</td><td> New@12345</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException: [The local appium server has not been started, Reason: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms, Consider increasing the server startup timeout value (currently 20000ms), Node.js executable path: C:\Program Files\nodejs\node.exe, Arguments: [C:\Users\dell\AppData\Roaming\npm\node_modules\appium\build\lib\main.js, --port, 4723, --address, 0.0.0.0], Output: [35m[Appium][39m Welcome to Appium v2.6.0
+[35m[Appium][39m The autodetected Appium home path: C:\Users\dell\.appium
+[35m[Appium][39m Attempting to load driver uiautomator2...
+[35m[Appium][39m Requiring driver at C:\Users\dell\.appium\node_modules\appium-uiautomator2-driver\build\index.js
+[35m[Appium][39m AndroidUiautomator2Driver has been successfully loaded in 1.524s
+[38;5;0m[HTTP][0m Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
+[35m[Appium][39m Could not configure Appium server. It&apos;s possible that a driver or plugin tried to update the server and failed. Original error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m Error: listen EADDRINUSE: address already in use 0.0.0.0:4723
+[35m[Appium][39m     at Server.setupListenHandle [as _listen2] (node:net:1898:16)
+[35m[Appium][39m     at listenInCluster (node:net:1946:12)
+[35m[Appium][39m     at doListen (node:net:2116:7)
+[35m[Appium][39m     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+]
+	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:203)
+	at base.BaseTest.startAppiumServer(BaseTest.java:41)
+Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://127.0.0.1:4723/status] to be available after 20009 ms
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:94)
+	at io.appium.java_client.service.local.AppiumDriverLocalService.ping(AppiumDriverLocalService.java:157)
+	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:182)
+	... 18 more
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
+	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:91)
+	... 20 more
+... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -25,7 +25,7 @@ import io.appium.java_client.AppiumDriver;
 public class MRO extends BaseTest {
 
 	@SuppressWarnings("deprecation")
-	@Test(dataProvider = "loginData", dataProviderClass = TesData.class)
+	@Test(dataProvider = "MROData", dataProviderClass = TesData.class)
 	public void LoginAcceptCredBVO(String username, String password) throws InterruptedException, IOException {
 
 		AppiumDriver driver = DriverManager.getDriver();
@@ -65,8 +65,7 @@ public class MRO extends BaseTest {
 			driver.findElement(AppiumBy.xpath(
 					"//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/btn_login\"]"))
 					.click();
-			longPress(driver.findElement(AppiumBy.xpath(
-					"//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/btn_login\"]")));
+			
 			waitForTime(10000);
 			String ExpectedTittle = "Welcome, Akshay QATest ";
 			String ActualTittle = driver.findElement(By.id("com.geotoll.egpsflex_android.dev.uat:id/txt_welcome_label"))

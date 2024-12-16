@@ -11,7 +11,20 @@ public class TesData {
 	  @DataProvider(name = "loginData")
 	 
 	    public Object[][] loginDataProvider() throws IOException {
-	    	//ReadFromExcel excelUtil = new ReadFromExcel("C:\\Users\\dell\\eclipse-workspace\\GeoTollUAT\\GeoTollExcelLogin.xlsx"); 
+		
+	    	ReadFromExcel excelUtil = new ReadFromExcel("C:\\Users\\dell\\eclipse-workspace\\GeoTollUAT\\GeoTollExcelLogin.xlsx"); 
+	    	
+	        String[][] data = excelUtil.getData("Sheet1");
+	        
+	        
+	        excelUtil.close();
+	        return data;
+	    } 
+   
+	  @DataProvider(name = "MROData")
+		 
+	    public Object[][] MROProvider() throws IOException {
+		
 	    	ReadFromExcel excelUtil = new ReadFromExcel("C:\\Users\\dell\\eclipse-workspace\\GeoTollUAT\\GeoTollExcelMRO.xlsx"); 
 	        String[][] data = excelUtil.getData("Sheet1");
 	        

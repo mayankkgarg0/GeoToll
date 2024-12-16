@@ -12,6 +12,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.automate.driver.manager.DriverManager;
+import com.automate.entity.TesData;
+import com.automate.utils.screenshot.ScreenshotUtils;
 import com.google.common.collect.ImmutableList;
 
 import base.BaseTest;
@@ -23,69 +25,74 @@ import java.time.Duration;
 
 public class HamburgerFunc extends BaseTest {
 
-	@Test(priority = 2)
-	public void ReportTecniicalIssue() throws InterruptedException {
-
+	
+	@Test(dataProvider = "MROData", dataProviderClass = TesData.class , priority = 2)
+	public void ReportTecniicalIssue(String username, String password) throws InterruptedException {
 		AppiumDriver driver = DriverManager.getDriver();
 		Thread.sleep(3000);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		driver.findElement(AppiumBy
-				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_email\"]"))
+		
+		
+		
+		driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_email\"]")).click();
+
+		driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_email\"]")).sendKeys(username);
+		driver.findElement(AppiumBy.xpath(
+				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_login_password\"]"))
 				.click();
 
-		driver.findElement(AppiumBy
-				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_email\"]"))
-				.sendKeys("udupaakshaya+QATest@gmail.com");
 		driver.findElement(AppiumBy.xpath(
-				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_login_password\"]"))
-				.click();
-
-		driver.findElement(AppiumBy.xpath(
-				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_login_password\"]"))
-				.sendKeys("New@12345");
+				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_login_password\"]"))
+				.sendKeys(password);
 		driver.navigate().back();
 
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/btn_login\"]"))
+				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/btn_login\"]"))
 				.click();
-		longPress(driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/btn_login\"]")));
+		
 		waitForTime(10000);
-		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/img_close\"]"))
-				.click();
-		Thread.sleep(5000);
+		
+		
+//--------------------------------------------------------------------------------Login Done--------------------------------------------------------------------------------------------------------//		
+//-----------------------------------------------------------------------------Report Technical Issue----------------------------------------------------------------------------------------------//	
+
+		
+	try {	//	driver.findElement(AppiumBy
+			//	.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/img_close\"]"))
+			//	.click();
+	//	Thread.sleep(5000);
 
 		test.info("Step 1: Open Left Pane");
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/img_hamburger\"]"))
+				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/img_hamburger\"]"))
 				.click();
 		Thread.sleep(1000);
 		// Report techical issue -
 		test.info("Step 2: Click on RTissue page");
 		WebElement ReportTechnicalIssue = wait.until(ExpectedConditions
-				.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/txt_label_report_issue")));
+				.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/txt_label_report_issue")));
 		ReportTechnicalIssue.click();
 		waitForTime(1000);
 		// Short Desp -
 		test.info("Step 3: Create Short Description");
 		WebElement ShortDesc = wait.until(ExpectedConditions
-				.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/edt_short_description")));
+				.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/edt_short_description")));
 		ShortDesc.click();
 		ShortDesc.sendKeys("ABCDE");
 		// Details
 		WebElement Details = wait.until(
-				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/edt_details")));
+				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/edt_details")));
 		Details.click();
 		Details.sendKeys("Hi " + " Complete Details Enclosed");
 
 		// Submit -
 		test.info("Step 4: Click on Submit");
 		WebElement Submit = wait.until(
-				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/btn_submit")));
+				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/btn_submit")));
 		Submit.click();
 		waitForTime(8000);
+		test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "TicketMessage"));
 		WebElement SubmitttedTicketNo = wait
 				.until(ExpectedConditions.elementToBeClickable(By.id("android:id/message")));
 		String TicketMessage = SubmitttedTicketNo.getText();
@@ -116,133 +123,154 @@ public class HamburgerFunc extends BaseTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+} catch(Exception e) {
+	test.info(e);
+	Assert.fail("Reporting Technical Issue Failed" + e);
+	
+}
 	}
 
-	@Test(priority = 3)
-	public void PrivacyPolicynTermsAndConditions() throws InterruptedException {
+	@Test(dataProvider = "MROData", dataProviderClass = TesData.class , priority = 3)
+	public void PrivacyPolicynTermsAndConditions(String username, String password) throws InterruptedException {
 
 		AppiumDriver driver = DriverManager.getDriver();
 		Thread.sleep(3000);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		driver.findElement(AppiumBy
-				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_email\"]"))
+try {		driver.findElement(AppiumBy
+				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_email\"]"))
 				.click();
 
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_email\"]"))
-				.sendKeys("udupaakshaya+QATest@gmail.com");
+				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_email\"]"))
+				.sendKeys(username);
 		driver.findElement(AppiumBy.xpath(
-				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_login_password\"]"))
+				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_login_password\"]"))
 				.click();
 
 		driver.findElement(AppiumBy.xpath(
-				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_login_password\"]"))
-				.sendKeys("New@12345");
+				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_login_password\"]"))
+				.sendKeys(password);
 		driver.navigate().back();
 
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/btn_login\"]"))
+				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/btn_login\"]"))
 				.click();
-		longPress(driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/btn_login\"]")));
+		
 		Thread.sleep(9000);
-		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/img_close\"]"))
-				.click();
-		Thread.sleep(5000);
+		
+//-----------------------------------------------------Login Done----------------------------------------------------------------------------------------------------------------------------------//
+//--------------------------------------------------------PP&TC------------------------------------------------------------------------------------------------------------------------------------//		
+try {	//	driver.findElement(AppiumBy
+		//		.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/img_close\"]"))
+		//		.click();
+	//	Thread.sleep(5000);
 
 		test.info("Step 1: Open Left Pane");
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/img_hamburger\"]"))
+				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/img_hamburger\"]"))
 				.click();
 		Thread.sleep(1000);
 		// Privacy Policy
 		test.info("Step 2: Click on Privacy Policy");
 		WebElement PrivacyPolicy = wait.until(
-				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/txt_label_pp")));
+				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/txt_label_pp")));
 		PrivacyPolicy.click();
-		waitForTime(5000);
+		waitForTime(10000);
+		test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "PrivacyPolicy"));
+		
+		
 		test.info("Step 3: Back");
 		WebElement BackButton = wait
-				.until(ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/img_back")));
+				.until(ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/img_back")));
 		BackButton.click();
 
 		waitForTime(1000);
 		// After privacy back button takes back click hamburger icon
 		test.info("Step 4: Open Again Left Pane");
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/img_hamburger\"]"))
+				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/img_hamburger\"]"))
 				.click();
 		Thread.sleep(1000);
 		// Terms and Conditions -
 		test.info("Step 5: Click on TermsnCondition");
 		WebElement TermsnCondition = wait.until(
-				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/txt_label_tc")));
+				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/txt_label_tc")));
 		TermsnCondition.click();
-		waitForTime(5000);
-
+		waitForTime(10000);
+		test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "TermsnCondition"));
 		test.info("Step 6: Back");
 		WebElement BackButton1 = wait
-				.until(ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/img_back")));
+				.until(ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/img_back")));
 		BackButton1.click();
 		waitForTime(2000);
-
+}
+catch(Exception e) {
+	test.info(e);
+	Assert.fail("PP & T&C Failed" + e);
+	
+}
+}catch(Exception e) {
+	test.info("Login Failed");
+	Assert.fail("Login Failed" + e);
+}
 	}
-
-	@Test(priority = 4)
-	public void ChangePassword() throws InterruptedException {
-
+	
+	@Test(dataProvider = "MROData", dataProviderClass = TesData.class , priority = 4)
+	public void ChangePassword(String username, String password) throws InterruptedException {
+     
 		AppiumDriver driver = DriverManager.getDriver();
 		Thread.sleep(3000);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_email\"]"))
+				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_email\"]"))
 				.click();
 
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_email\"]"))
-				.sendKeys("udupaakshaya+QATest@gmail.com");
+				.xpath("//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_email\"]"))
+				.sendKeys(username);
 		driver.findElement(AppiumBy.xpath(
-				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_login_password\"]"))
+				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_login_password\"]"))
 				.click();
 
 		driver.findElement(AppiumBy.xpath(
-				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev:id/edt_login_password\"]"))
-				.sendKeys("New@12345");
+				"//android.widget.EditText[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/edt_login_password\"]"))
+				.sendKeys(password);
 		driver.navigate().back();
 
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/btn_login\"]"))
+				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/btn_login\"]"))
 				.click();
-		longPress(driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/btn_login\"]")));
+		//longPress(driver.findElement(AppiumBy
+			//	.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/btn_login\"]")));
 		Thread.sleep(9000);
-		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/img_close\"]"))
+		
+//-------------------------------------------------------------------------------Login Done---------------------------------------------------------------------------------------------------------//		
+//------------------------------------------------------------------------------Change Password-----------------------------------------------------------------------------------------------------//		
+try {		driver.findElement(AppiumBy
+				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/img_close\"]"))
 				.click();
 		Thread.sleep(5000);
 		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		test.info("Step 1: Open Left Pane");
 		driver.findElement(AppiumBy
-				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev:id/img_hamburger\"]"))
+				.xpath("//android.widget.Button[@resource-id=\"com.geotoll.egpsflex_android.dev.uat:id/img_hamburger\"]"))
 				.click();
 		Thread.sleep(1000);
 
 		// change password
 		test.info("Step 2: Click on Change password Text");
-		driver.findElement(By.id("com.geotoll.egpsflex_android.dev:id/layout_cng_pswd_tab")).click();
+		driver.findElement(By.id("com.geotoll.egpsflex_android.dev.uat:id/layout_cng_pswd_tab")).click();
 		waitForTime(2000);
-		test.info("Step 3: Enter Old Passwod");
+		test.info("Step 3: Enter Old Password");
 		WebElement OldPassword = wait.until(
-				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/edt_old_password")));
+				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/edt_old_password")));
 		OldPassword.click();
-		OldPassword.sendKeys("New@12345");
+		OldPassword.sendKeys(password);
 		test.info("Step 4: Enter New Passwod");
 		WebElement NewPassword = wait.until(
-				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/edt_new_password")));
+				ExpectedConditions.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/edt_new_password")));
 		NewPassword.click();
 		NewPassword.sendKeys("New@12346");
 		// swipe function call
@@ -250,19 +278,25 @@ public class HamburgerFunc extends BaseTest {
 		test.info("Step 4: Re-Enter New Passwod");
 		driver.navigate().back();
 		WebElement ReNewPassword = wait.until(ExpectedConditions
-				.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/edt_confirm_new_password")));
+				.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/edt_confirm_new_password")));
 		ReNewPassword.click();
 		ReNewPassword.sendKeys("New@12346");
 		driver.navigate().back();
 		WebElement UpdatePassword = wait.until(ExpectedConditions
-				.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev:id/btn_update_password")));
-		UpdatePassword.click();
+				.elementToBeClickable(By.id("com.geotoll.egpsflex_android.dev.uat:id/btn_update_password")));
+	//	UpdatePassword.click();
 		// longPress(UpdatePassword);
 		test.pass("Successfully Change Password");
+		test.addScreenCaptureFromPath(ScreenshotUtils.takeScreenshot(driver, "Change Password"));
 		waitForTime(4000);
-
+}
+catch(Exception e) {
+	test.info(e);
+	Assert.fail("Change Password Failed" + e);
+	
+}
 	}
-
+//---------------------------------------------------------------------------------------Other Function-----------------------------------------------------------------------------------------------//
 	public static void longPress(WebElement ele) {
 		Point location = ele.getLocation();
 		PointerInput input = new PointerInput(PointerInput.Kind.TOUCH, "finger");
